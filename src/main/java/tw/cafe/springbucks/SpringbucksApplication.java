@@ -34,7 +34,7 @@ public class SpringbucksApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 	    log.info("All Coffee: {}", coffeeRepository.findAll());
 
-	    Optional<Coffee> latte = coffeeService.findOneCoffee("Latte");
+	    Optional<Coffee> latte = coffeeService.findOneByName("latte");
 	    if (latte.isPresent()) {
 			CoffeeOrder order = coffeeOrderService.createOrder("CC", latte.get());
 			log.info("Update INIT to PAID: {}", coffeeOrderService.updateState(order, OrderState.PAID));

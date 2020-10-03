@@ -20,10 +20,10 @@ public class CoffeeOrderService {
     private CoffeeOrderRepository coffeeOrderRepository;
 
     public CoffeeOrder createOrder(String customer, Coffee...coffees) {
-        CoffeeOrder coffeeOrder = new CoffeeOrder()
-                .setCustomer(customer)
-                .setItems(new ArrayList<>(Arrays.asList(coffees)))
-                .setState(OrderState.INIT);
+        CoffeeOrder coffeeOrder = new CoffeeOrder();
+        coffeeOrder.setCustomer(customer);
+        coffeeOrder.setItems(new ArrayList<>(Arrays.asList(coffees)));
+        coffeeOrder.setState(OrderState.INIT);
         coffeeOrderRepository.save(coffeeOrder);
         log.info("New Order: {}", coffeeOrder);
         return coffeeOrder;
