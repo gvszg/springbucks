@@ -32,13 +32,13 @@ public class SpringbucksApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-//	    log.info("All Coffee: {}", coffeeRepository.findAll());
+	    log.info("All Coffee: {}", coffeeRepository.findAll());
 
-//	    Optional<Coffee> latte = coffeeService.findOneCoffee("Latte");
-//	    if (latte.isPresent()) {
-//			CoffeeOrder order = coffeeOrderService.createOrder("CC", latte.get());
-//			log.info("Update INIT to PAID: {}", coffeeOrderService.updateState(order, OrderState.PAID));
-//			log.info("Update PAID to INIT: {}", coffeeOrderService.updateState(order, OrderState.INIT));
-//		}
+	    Optional<Coffee> latte = coffeeService.findOneByName("latte");
+	    if (latte.isPresent()) {
+			CoffeeOrder order = coffeeOrderService.createOrder("CC", latte.get());
+			log.info("Update INIT to PAID: {}", coffeeOrderService.updateState(order, OrderState.PAID));
+			log.info("Update PAID to INIT: {}", coffeeOrderService.updateState(order, OrderState.INIT));
+		}
 	}
 }

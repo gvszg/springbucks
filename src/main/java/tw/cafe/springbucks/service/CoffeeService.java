@@ -27,4 +27,10 @@ public class CoffeeService {
         log.info("Coffee found: {}", coffee);
         return coffee;
     }
+
+    public Optional<Coffee> findOneByName(String name) {
+        Optional<Coffee> optionalCoffee = coffeeRepository.findOneByName(name);
+        log.info("Coffee found: {}", optionalCoffee);
+        return optionalCoffee;
+    }
 }

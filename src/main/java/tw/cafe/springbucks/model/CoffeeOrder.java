@@ -10,7 +10,6 @@ import java.util.List;
 @Entity
 @Table(name = "T_ORDER")
 @Data
-@Builder
 @Accessors(chain = true)
 @ToString(callSuper = true)
 @NoArgsConstructor
